@@ -20,7 +20,7 @@ function Header({ title }: { title: string }) {
 
   return (
     <div style={container}>
-      <img style={imgStyle} src="/src/assets/pglogo.png" alt="logo" />
+      <img style={imgStyle} src="./pglogo.png" alt="logo" />
       <h1 style={heading}>{title}</h1>
       <button className="btn" type="button">
         Reset

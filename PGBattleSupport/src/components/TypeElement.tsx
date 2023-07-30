@@ -1,6 +1,6 @@
 import { useAppContext } from "../Context";
 import { Type } from "../Interfaces/Types";
-import { useState } from "react";
+
 type type = { type: Type };
 
 function TypeElement({ type }: type) {

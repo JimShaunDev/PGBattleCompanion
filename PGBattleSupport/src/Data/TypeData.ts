@@ -5,7 +5,7 @@ const Normal: Type = {
   name: "Normal",
   weakTo: [],
   strongTo: [],
-  img: "/src/assets/TypeLogos/normal.jpg",
+  img: "./TypeLogos/normal.jpg",
 };
 
 const Bug: Type = {
@@ -13,7 +13,7 @@ const Bug: Type = {
   name: "Bug",
   weakTo: [],
   strongTo: [],
-  img: "/src/assets/TypeLogos/bug.jpg",
+  img: "./TypeLogos/bug.jpg",
 };
 
 const Dark: Type = {
@@ -21,7 +21,7 @@ const Dark: Type = {
   name: "Dark",
   weakTo: [],
   strongTo: [],
-  img: "/src/assets/TypeLogos/dark.jpg",
+  img: "./TypeLogos/dark.jpg",
 };
 
 const Dragon: Type = {
@@ -29,7 +29,7 @@ const Dragon: Type = {
   name: "Dragon",
   weakTo: [],
   strongTo: [],
-  img: "/src/assets/TypeLogos/dragon.jpg",
+  img: "./TypeLogos/dragon.jpg",
 };
 
 const Electric: Type = {
@@ -37,7 +37,7 @@ const Electric: Type = {
   name: "Electric",
   weakTo: [],
   strongTo: [],
-  img: "/src/assets/TypeLogos/electric.jpg",
+  img: "./TypeLogos/electric.jpg",
 };
 
 const Fairy: Type = {
@@ -45,7 +45,7 @@ const Fairy: Type = {
   name: "Fairy",
   weakTo: [],
   strongTo: [],
-  img: "/src/assets/TypeLogos/fairy.jpg",
+  img: "./TypeLogos/fairy.jpg",
 };
 
 const Fighting: Type = {
@@ -53,7 +53,7 @@ const Fighting: Type = {
   name: "Fighting",
   weakTo: [],
   strongTo: [],
-  img: "/src/assets/TypeLogos/fighting.jpg",
+  img: "./TypeLogos/fighting.jpg",
 };
 
 const Fire: Type = {
@@ -61,7 +61,7 @@ const Fire: Type = {
   name: "Fire",
   weakTo: [],
   strongTo: [],
-  img: "/src/assets/TypeLogos/fire.jpg",
+  img: "./TypeLogos/fire.jpg",
 };
 
 const Flying: Type = {
@@ -69,7 +69,7 @@ const Flying: Type = {
   name: "Flying",
   weakTo: [],
   strongTo: [],
-  img: "/src/assets/TypeLogos/flying.jpg",
+  img: "./TypeLogos/flying.jpg",
 };
 
 const Ghost: Type = {
@@ -77,7 +77,7 @@ const Ghost: Type = {
   name: "Ghost",
   weakTo: [],
   strongTo: [],
-  img: "/src/assets/TypeLogos/ghost.jpg",
+  img: "./TypeLogos/ghost.jpg",
 };
 
 const Grass: Type = {
@@ -85,7 +85,7 @@ const Grass: Type = {
   name: "Grass",
   weakTo: [],
   strongTo: [],
-  img: "/src/assets/TypeLogos/grass.jpg",
+  img: "./TypeLogos/grass.jpg",
 };
 
 const Ground: Type = {
@@ -93,7 +93,7 @@ const Ground: Type = {
   name: "Ground",
   weakTo: [],
   strongTo: [],
-  img: "/src/assets/TypeLogos/ground.jpg",
+  img: "./TypeLogos/ground.jpg",
 };
 
 const Ice: Type = {
@@ -101,7 +101,7 @@ const Ice: Type = {
   name: "Ice",
   weakTo: [],
   strongTo: [],
-  img: "/src/assets/TypeLogos/ice.jpg",
+  img: "./TypeLogos/ice.jpg",
 };
 
 const Poison: Type = {
@@ -109,7 +109,7 @@ const Poison: Type = {
   name: "Poison",
   weakTo: [],
   strongTo: [],
-  img: "/src/assets/TypeLogos/poison.jpg",
+  img: "./TypeLogos/poison.jpg",
 };
 
 const Psychic: Type = {
@@ -117,7 +117,7 @@ const Psychic: Type = {
   name: "Psychic",
   weakTo: [],
   strongTo: [],
-  img: "/src/assets/TypeLogos/psychic.jpg",
+  img: "./TypeLogos/psychic.jpg",
 };
 
 const Rock: Type = {
@@ -125,7 +125,7 @@ const Rock: Type = {
   name: "Rock",
   weakTo: [],
   strongTo: [],
-  img: "/src/assets/TypeLogos/rock.jpg",
+  img: "./TypeLogos/rock.jpg",
 };
 
 const Steel: Type = {
@@ -133,7 +133,7 @@ const Steel: Type = {
   name: "Steel",
   weakTo: [],
   strongTo: [],
-  img: "/src/assets/TypeLogos/steel.jpg",
+  img: "./TypeLogos/steel.jpg",
 };
 
 const Water: Type = {
@@ -141,7 +141,7 @@ const Water: Type = {
   name: "Water",
   weakTo: [],
   strongTo: [],
-  img: "/src/assets/TypeLogos/water.jpg",
+  img: "./TypeLogos/water.jpg",
 };
 
 Bug.weakTo = [Flying, Rock, Fire];

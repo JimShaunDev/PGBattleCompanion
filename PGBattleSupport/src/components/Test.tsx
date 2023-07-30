@@ -1,6 +1,4 @@
 import { useAppContext } from "../Context";
-import { useState } from "react";
-import { Type } from "../Interfaces/Types";
 import "../App.css";
 import TypeElement from "./TypeElement";
 
