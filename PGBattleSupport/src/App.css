@@ -1,0 +1,57 @@
+#root {
+  margin: 0 auto;
+  text-align: center;
+}
+
+body {
+  background-color: #301e67;
+}
+p {
+  margin: 0;
+}
+
+h1 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+h2 {
+  font-size: 1.8rem;
+  margin: 0;
+}
+h3 {
+  font-size: 1.4rem;
+  margin: 0;
+}
+h4 {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.col {
+  display: block;
+  padding: 1rem;
+  width: 100%;
+}
+
+.btn {
+  background: #5e5df0;
+  min-width: 50px;
+  max-height: 40px;
+  padding: 5px;
+  box-shadow: #5e5df0 0 10px 20px -15px;
+  border-radius: 20px;
+  color: white;
+}
+
+.btn:active {
+  /* font-size: 1rem; */
+  transform: scale(0.9);
+  /* box-shadow: 0 3px 15px -2px; */
+}
+/* CSS */
