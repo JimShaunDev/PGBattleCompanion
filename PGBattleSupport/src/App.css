@@ -1,31 +1,55 @@
 #root {
   margin: 0 auto;
   text-align: center;
+  font-size: 16px;
 }
 
 body {
   background-color: #301e67;
+  font-size: 16px;
 }
+
+label {
+  margin: 0;
+  font-size: 1rem;
+  margin: 0;
+  color: #b6eada;
+  display: block;
+}
+
+input {
+  display: block;
+  width: 100%;
+  padding: 2px;
+}
+
 p {
   margin: 0;
+  font-size: 1rem;
+  margin: 0;
+  color: #b6eada;
 }
 
 h1 {
   font-size: 2rem;
   margin: 0;
+  color: #b6eada;
 }
 
 h2 {
   font-size: 1.8rem;
   margin: 0;
+  color: #b6eada;
 }
 h3 {
   font-size: 1.4rem;
   margin: 0;
+  color: #b6eada;
 }
 h4 {
   font-size: 1.2rem;
   margin: 0;
+  color: #b6eada;
 }
 
 .container {

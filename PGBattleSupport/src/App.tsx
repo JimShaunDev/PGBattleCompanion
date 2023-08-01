@@ -8,8 +8,11 @@ import { Type } from "./Interfaces/Types";
 import "./App.css";
 import { Pokemon } from "./Interfaces/Pokemon";
 import SelectPokemon from "./components/SelectPokemon";
+import { Team } from "./Interfaces/Team";
 
 function App() {
+  const [selectedTeam, setSelectedTeam] = useState<Team | undefined>();
+  const [selectedPokemon, setSelectedPokemon] = useState<Pokemon | undefined>();
   const [selectedType, setSelectedType] = useState<Type | undefined>(undefined);
   const [allPokemon, setAllPokemon] = useState<Pokemon[]>([]);
   const [loading, setLoading] = useState<Boolean>(true);
@@ -21,7 +24,7 @@ function App() {
       );
 
       console.log(data.results);
-      const all = [];
+      const all = [] as Pokemon[];
       const demo = data.results.map((item: { name: any }) => {
         all.push({ id: 0, name: item.name } as Pokemon);
       });
@@ -33,13 +36,27 @@ function App() {
     fetchData()
       // make sure to catch any error
       .catch(console.error);
+    setLoading(false);
   }, []);
   return (
     <AppContext.Provider
-      value={{ selectedType, setSelectedType, allPokemon, setAllPokemon }}
+      value={{
+        selectedType,
+        setSelectedType,
+        allPokemon,
+        setAllPokemon,
+        selectedPokemon,
+        setSelectedPokemon,
+        selectedTeam,
+        setSelectedTeam,
+      }}
     >
       <Header title="PokemonGo Battle Support" />
-      {loading && <SelectPokemon />}
+      {!loading && (
+        <div className="container">
+          <SelectPokemon />
+        </div>
+      )}
       <h1>Type Helper</h1>
       {!selectedType ? <Types /> : <Test />}
     </AppContext.Provider>
