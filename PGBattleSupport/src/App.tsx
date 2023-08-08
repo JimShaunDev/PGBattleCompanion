@@ -23,13 +23,17 @@ function App() {
         (response) => response.json()
       );
 
-      console.log(data.results);
-      const all = [] as Pokemon[];
-      const demo = data.results.map((item: { name: any }) => {
-        all.push({ id: 0, name: item.name } as Pokemon);
+      let counter: number = 1;
+      let all = [] as Pokemon[];
+      const { results } = data;
+      //console.log(results);
+      results.map((item: any) => {
+        const val = { id: counter, name: item.name.toUpperCase() } as Pokemon;
+        counter += 1;
+        all = [...all, val];
       });
-      console.log(demo);
-      setAllPokemon(demo);
+
+      setAllPokemon(all);
     };
 
     // call the function
