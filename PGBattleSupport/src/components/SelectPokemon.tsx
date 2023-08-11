@@ -1,25 +1,42 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useAppContext } from "../Context";
-import { KeyboardEvent } from "react";
-
+import { Pokemon } from "../Interfaces/Pokemon";
 import "../App.css";
 
 function SelectPokemon() {
   const { allPokemon } = useAppContext();
-
+  const [characters, SetCharacters] = useState("");
+  const [matching, SetMatching] = useState<Pokemon[] | undefined>([]);
+  const [UI, SetUI] = useState<HTMLElement | undefined>();
   const style = {
     width: "50%",
     margin: "auto",
   };
 
+  const autoFillField = {
+    display: "block",
+    backgroundColor: "white",
+    color: "black",
+  };
+
+  useEffect(() => {
+    if (characters.length > 1) {
+      console.log(matching);
+      UI?.parentElement?.append("<h1 >Hello</h1>");
+    }
+  });
+
   const FilterPokemon = (evt: React.KeyboardEvent<HTMLInputElement>) => {
-    console.log(evt);
     let inputs = String(evt.currentTarget.value);
-    console.log(inputs.trim());
-    let matching = allPokemon?.filter((pokemon) => {
+    //get input field
+    SetUI(evt.currentTarget);
+    //get textbox input value
+    SetCharacters(evt.currentTarget.value);
+
+    let match = allPokemon?.filter((pokemon) => {
       return pokemon.name.includes(inputs.toUpperCase());
     });
-    console.log(matching);
+    SetMatching(match);
   };
 
   return (
@@ -27,12 +44,13 @@ function SelectPokemon() {
       <h1>{allPokemon?.length}</h1>
 
       <label>Select Pokemon</label>
-
-      <input
-        name="selectPokemon"
-        id="selectPokemon"
-        onKeyUp={(evnt) => FilterPokemon(evnt)}
-      />
+      <div id="AutoFill">
+        <input
+          name="selectPokemon"
+          id="selectPokemon"
+          onKeyUp={(evnt) => FilterPokemon(evnt)}
+        />
+      </div>
       <button className="btn" type="button">
         Add
       </button>
