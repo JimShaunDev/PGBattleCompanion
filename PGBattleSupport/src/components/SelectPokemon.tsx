@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useAppContext } from "../Context";
 import { Pokemon } from "../Interfaces/Pokemon";
 import "../App.css";
+import AutofillTab from "./AutofillTab";
 
 function SelectPokemon() {
   const { allPokemon } = useAppContext();
@@ -50,7 +51,12 @@ function SelectPokemon() {
           id="selectPokemon"
           onKeyUp={(evnt) => FilterPokemon(evnt)}
         />
+        {matching?.length != 0 &&
+          matching?.map((item) => {
+            return <AutofillTab pokemon={item} />;
+          })}
       </div>
+
       <button className="btn" type="button">
         Add
       </button>

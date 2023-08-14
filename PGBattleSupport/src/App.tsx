@@ -9,6 +9,7 @@ import "./App.css";
 import { Pokemon } from "./Interfaces/Pokemon";
 import SelectPokemon from "./components/SelectPokemon";
 import { Team } from "./Interfaces/Team";
+import TeamMember from "./components/TeamMember";
 
 function App() {
   const [selectedTeam, setSelectedTeam] = useState<Team | undefined>();
@@ -56,6 +57,7 @@ function App() {
       }}
     >
       <Header title="PokemonGo Battle Support" />
+      {selectedPokemon && <TeamMember member={selectedPokemon} />}
       {!loading && (
         <div className="container">
           <SelectPokemon />
