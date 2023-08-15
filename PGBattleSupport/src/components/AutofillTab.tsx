@@ -3,7 +3,7 @@ import { useAppContext } from "../Context";
 import { Pokemon } from "../Interfaces/Pokemon";
 
 function AutofillTab({ pokemon }: { pokemon: Pokemon }) {
-  const [selectedPokemon, setSelectedPokemon] = useState<Pokemon | undefined>();
+  const { setSelectedPokemon } = useAppContext();
   const [hover, SetHover] = useState<Boolean>(false);
 
   const handleMouseEnter = () => {
@@ -14,9 +14,11 @@ function AutofillTab({ pokemon }: { pokemon: Pokemon }) {
     SetHover(false);
   };
 
-  const onSelectedClick = () => {
+  const onSelectedClick = (el: any) => {
     console.log(pokemon);
     setSelectedPokemon(pokemon);
+    console.log(el);
+    el.value = "";
   };
 
   const style = {
@@ -32,7 +34,9 @@ function AutofillTab({ pokemon }: { pokemon: Pokemon }) {
       style={style}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      onClick={onSelectedClick}
+      onClick={(el) =>
+        onSelectedClick(el.currentTarget.parentElement?.firstChild)
+      }
     >
       {pokemon.name}
     </div>

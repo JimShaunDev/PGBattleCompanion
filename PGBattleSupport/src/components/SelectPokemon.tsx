@@ -5,7 +5,7 @@ import "../App.css";
 import AutofillTab from "./AutofillTab";
 
 function SelectPokemon() {
-  const { allPokemon } = useAppContext();
+  const { allPokemon, selectedPokemon, setSelectedPokemon } = useAppContext();
   const [characters, SetCharacters] = useState("");
   const [matching, SetMatching] = useState<Pokemon[] | undefined>([]);
   const [UI, SetUI] = useState<HTMLElement | undefined>();
@@ -21,11 +21,10 @@ function SelectPokemon() {
   };
 
   useEffect(() => {
-    if (characters.length > 1) {
-      console.log(matching);
-      UI?.parentElement?.append("<h1 >Hello</h1>");
+    if (selectedPokemon) {
+      SetMatching([]);
     }
-  });
+  }, [selectedPokemon]);
 
   const FilterPokemon = (evt: React.KeyboardEvent<HTMLInputElement>) => {
     let inputs = String(evt.currentTarget.value);
