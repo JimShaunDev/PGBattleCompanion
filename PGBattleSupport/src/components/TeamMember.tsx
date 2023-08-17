@@ -5,13 +5,14 @@ import { TypeData } from "../Data/TypeData";
 
 function TeamMember({ member }: { member: Pokemon }) {
   const [updatedMember, setUpdatedMember] = useState<Pokemon>(member);
-  const foundTypes = [] as Type[];
+  const [loading, setLoading] = useState(true);
   const heading = {
     marginBottom: "1rem",
   };
 
   const imgStyle = {
-    height: "5%",
+    height: "3em",
+    padding: "0.2rem",
     borderRadius: "30px",
   };
 
@@ -26,6 +27,7 @@ function TeamMember({ member }: { member: Pokemon }) {
       const { types, moves } = data;
 
       //Resolve generic json data as app specific element types
+      const foundTypes = [] as Type[];
 
       types.forEach((t: any) => {
         const appType = TypeData.find((item) => {
@@ -34,6 +36,7 @@ function TeamMember({ member }: { member: Pokemon }) {
 
         if (appType) {
           foundTypes.push(appType);
+          updatedMember.types?.push(appType);
         }
       });
 
@@ -42,6 +45,7 @@ function TeamMember({ member }: { member: Pokemon }) {
       replace.types = foundTypes;
 
       setUpdatedMember(replace);
+      setLoading(false);
     };
 
     fetchData();
@@ -51,8 +55,8 @@ function TeamMember({ member }: { member: Pokemon }) {
     <div>
       <h3 style={heading}>Configure Team Member</h3>
       <h1>{updatedMember.name}</h1>
-      {foundTypes.length > 0 &&
-        foundTypes.map((type) => {
+      {!loading &&
+        updatedMember.types?.map((type) => {
           return (
             <img
               style={imgStyle}
