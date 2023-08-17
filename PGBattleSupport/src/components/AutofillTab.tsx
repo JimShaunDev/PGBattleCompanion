@@ -15,9 +15,9 @@ function AutofillTab({ pokemon }: { pokemon: Pokemon }) {
   };
 
   const onSelectedClick = (el: any) => {
-    console.log(pokemon);
+    // console.log(pokemon);
     setSelectedPokemon(pokemon);
-    console.log(el);
+    //console.log(el);
     el.value = "";
   };
 

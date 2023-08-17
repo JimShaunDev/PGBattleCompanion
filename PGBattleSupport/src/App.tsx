@@ -2,7 +2,7 @@ import { AppContext } from "./Context";
 import { useState, useEffect } from "react";
 import Header from "./components/Header";
 import Types from "./components/Types";
-import Test from "./components/Test";
+import TypeResult from "./components/TypeResult";
 import { Type } from "./Interfaces/Types";
 
 import "./App.css";
@@ -57,14 +57,19 @@ function App() {
       }}
     >
       <Header title="PokemonGo Battle Support" />
-      {selectedPokemon && <TeamMember member={selectedPokemon} />}
-      {!loading && (
-        <div className="container">
-          <SelectPokemon />
-        </div>
+      {selectedPokemon ? (
+        <TeamMember member={selectedPokemon} />
+      ) : (
+        !loading && (
+          <div className="container">
+            <SelectPokemon />
+          </div>
+        )
       )}
+      {/*
       <h1>Type Helper</h1>
-      {!selectedType ? <Types /> : <Test />}
+      {!selectedType ? <Types /> : <TypeResult />}
+        */}
     </AppContext.Provider>
   );
 }

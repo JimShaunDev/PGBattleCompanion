@@ -2,7 +2,7 @@ import { useAppContext } from "../Context";
 import "../App.css";
 import TypeElement from "./TypeElement";
 
-function Test() {
+function TypeResult() {
   const { selectedType, setSelectedType } = useAppContext();
   const ClearSelection = () => {
     setSelectedType(undefined);
@@ -73,4 +73,4 @@ function Test() {
   );
 }
 
-export default Test;
+export default TypeResult;
